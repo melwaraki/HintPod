@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'HintPod_Example' do
+  pod 'HintPod', :path => '../'
+
+  target 'HintPod_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
