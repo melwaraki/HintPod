@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'HintPod'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of HintPod.'
+  s.summary          = 'Build a community with two lines of code.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -28,15 +28,20 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/melwaraki/HintPod.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
+  s.swift_version = '4.2'
 
   s.source_files = 'HintPod/Classes/**/*'
+  s.resources = "HintPod/Assets/*.{png,jpeg,jpg,storyboard,xib,xcassets,json}"
   
-  # s.resource_bundles = {
-  #   'HintPod' => ['HintPod/Assets/*.png']
-  # }
+   s.resource_bundles = {
+     'HintPod' => ['HintPod/Assets/*.png']
+   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
+  # s.dependency 'R.swift'
+  s.dependency 'Alamofire'
+  s.dependency 'UITextView+Placeholder'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

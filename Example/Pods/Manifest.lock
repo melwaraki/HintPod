@@ -1,0 +1,27 @@
+PODS:
+  - Alamofire (4.8.1)
+  - HintPod (0.1.0):
+    - Alamofire
+    - "UITextView+Placeholder"
+  - "UITextView+Placeholder (1.2.1)"
+
+DEPENDENCIES:
+  - HintPod (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - "UITextView+Placeholder"
+
+EXTERNAL SOURCES:
+  HintPod:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  HintPod: 325ea7a28269d7b0a68f638ed0f0b0eed89df57e
+  "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
+
+PODFILE CHECKSUM: 8bd97ea9f60b69c2c5c7e09eefa29e4c396193d6
+
+COCOAPODS: 1.7.2
