@@ -122,7 +122,7 @@ class APIManager {
         }
         
         var parameters = "addComment?userId=\(userId)&content=\(comment)&suggestionId=\(suggestionId)"
-        parameters = parameters.replacingOccurrences(of: " ", with: "+")
+        parameters = parameters.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         Alamofire.request(Constants.baseURL + parameters).response { (response) in
             if (response.error != nil) {
@@ -148,9 +148,11 @@ class APIManager {
             return;
         }
         
-        let parameters = "voteSuggestion?userId=\(userId)&projectId=\(projectId)"
+        var parameters = "voteSuggestion?userId=\(userId)&projectId=\(projectId)"
             + "&suggestionId=\(suggestionId)&upvote=\(upvote ? "true" : "false")"
             + "&voting=\(voting ? "true" : "false")"
+        
+        parameters = parameters.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         Alamofire.request(Constants.baseURL + parameters).response(completionHandler: { (response) in
             if (response.error != nil) {
@@ -179,6 +181,8 @@ class APIManager {
         } else {
             parameters = "verifyUser?uniqueId=\(id)&name=\(name!)&projectId=\(projectId)"
         }
+        
+        parameters = parameters.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         Alamofire.request(Constants.baseURL + parameters).responseString(completionHandler: { (response) in
             if (response.error != nil) {
