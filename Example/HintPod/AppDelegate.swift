@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let user = HPUser(id: "mirage299@gmail.com", name: "Marwan")
+        let user = HPUser(id: "mirage299@gmail.com", name: "Marwan Elwaraki")
         HintPod.authenticate(user: user, projectId: "68815057670")
         return true
     }

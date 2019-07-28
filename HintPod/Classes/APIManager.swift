@@ -182,7 +182,9 @@ class APIManager {
             parameters = "verifyUser?uniqueId=\(id)&name=\(name!)&projectId=\(projectId)"
         }
         
+        print(parameters)
         parameters = parameters.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        print(parameters)
         
         Alamofire.request(Constants.baseURL + parameters).responseString(completionHandler: { (response) in
             if (response.error != nil) {
