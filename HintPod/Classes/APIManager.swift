@@ -185,6 +185,8 @@ class APIManager {
         print(parameters)
         parameters = parameters.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         print(parameters)
+        parameters = parameters.replacingOccurrences(of: " ", with: "+")
+        print(parameters)
         
         Alamofire.request(Constants.baseURL + parameters).responseString(completionHandler: { (response) in
             if (response.error != nil) {
