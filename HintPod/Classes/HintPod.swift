@@ -9,14 +9,14 @@ public class HintPod {
         let sb = UIStoryboard(name: "HPMain", bundle: bundle!)
         let vc: UIViewController = sb.instantiateInitialViewController()!
         
-        if let title = title {
-            vc.children.first?.title = title
-        }
+//        if let title = title {
+//            vc.children.first?.title = title
+//        }
         
-        UIApplication.shared.keyWindow!.rootViewController!.present(vc, animated: true)
+        UIApplication.topViewController()?.present(vc, animated: true)
     }
     
-    public static func authenticate(user: HPUser, projectId: String) {
+    public static func authenticate(user: HPUser, projectId: String, companyId: String) {
         
         if user.name != nil {
             UserDefaults.standard.set(user.name, forKey: "HPUserName")
@@ -25,6 +25,7 @@ public class HintPod {
         }
         
         UserDefaults.standard.set(projectId, forKey: "HPProjectId")
+        UserDefaults.standard.set(companyId, forKey: "HPCompanyId")
         
         APIManager.registerUser(id: user.id, name: user.name, success: { HPid in
             UserDefaults.standard.set(HPid, forKey: "HPUserId")

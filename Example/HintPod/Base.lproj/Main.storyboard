@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WNg-TW-nVk">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WNg-TW-nVk">
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,23 +26,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="86J-Fn-vUI" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="1nd-Co-Kgz"/>
                             <constraint firstItem="86J-Fn-vUI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="16" id="79J-UM-tvT"/>
                             <constraint firstItem="86J-Fn-vUI" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="V6r-PG-iLk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My App" id="jlH-tW-1e7">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="WRd-Pv-jSW">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uG4-X9-x6d">
-                                <rect key="frame" x="280" y="7" width="79" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Community"/>
-                                <connections>
-                                    <action selector="tappedPresent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SnS-Qa-Cd8"/>
-                                </connections>
-                            </button>
+                    <navigationItem key="navigationItem" title="My App" id="KM7-aL-lwr">
+                        <barButtonItem key="rightBarButtonItem" title="Community" id="bRL-3p-ncu">
+                            <connections>
+                                <action selector="tappedPresent:" destination="vXZ-lx-hvc" id="2FD-YJ-uGr"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -58,7 +51,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WNg-TW-nVk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="2w7-1e-JWR">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

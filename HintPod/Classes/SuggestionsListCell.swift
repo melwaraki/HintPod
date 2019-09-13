@@ -90,9 +90,13 @@ class UpvoteBtn: UIButton {
         didSet {
             
             if isSelected {
-                self.tintColor = UIColor(red:0.12, green:0.90, blue:0.39, alpha:1.0) // green
+                self.tintColor = UIColor(red:0.12, green:0.90, blue:0.39, alpha:1.0)
             } else {
-                self.tintColor = .darkGray
+                if #available(iOS 13.0, *) {
+                    self.tintColor = .label
+                } else {
+                    self.tintColor = .darkGray
+                }
             }
         }
     }
@@ -119,7 +123,11 @@ class DownvoteBtn: UIButton {
             if isSelected {
                 self.tintColor = UIColor(red:0.99, green:0.00, blue:0.21, alpha:1.0) //red
             } else {
-                self.tintColor = .darkGray
+                if #available(iOS 13.0, *) {
+                    self.tintColor = .label
+                } else {
+                    self.tintColor = .darkGray
+                }
             }
         }
     }
@@ -128,11 +136,14 @@ class DownvoteBtn: UIButton {
 
 class CommentCell: UITableViewCell {
     
+    @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        lineView.backgroundColor = .random
     }
     
 }

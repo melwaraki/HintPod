@@ -12,6 +12,7 @@ class Comment {
     var id: String!
     var content: String!
     var uid: String!
+    var name: String!
     
     init(json: AnyObject) {
         
@@ -22,6 +23,7 @@ class Comment {
         self.id = dict["key"] as? String
         self.content = dict["content"] as? String ?? "Error comment"
         self.uid = dict["uid"] as? String
+        self.name = dict["name"] as? String ?? "Error name"
     }
     
 }

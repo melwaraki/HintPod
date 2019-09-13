@@ -39,6 +39,7 @@ class CommentsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        tableView.separatorStyle = comments.count == 0 ? .none : .singleLineEtched
         return section == 0 ? 1 : comments.count
     }
     
@@ -62,6 +63,7 @@ class CommentsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentsListCell") as! CommentCell
+            cell.nameLabel.text = comments[indexPath.row].name
             cell.commentLabel.text = comments[indexPath.row].content
             return cell
         }
@@ -69,7 +71,11 @@ class CommentsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return section == 0 ? nil : "Comments"
+        if section == 0 {
+            return nil
+        } else {
+            return comments.count == 0 ? "No comments yet" : "Comments"
+        }
     }
     
     @IBAction func tappedComment(_ sender: Any) {

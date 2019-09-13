@@ -54,7 +54,7 @@ class AddSuggestionAlert: UIView {
     
     @objc func keyboardWillShow(notification:NSNotification){
         //give room at the bottom of the scroll view, so it doesn't cover up anything the user needs to tap
-        var userInfo = notification.userInfo!
+        let userInfo = notification.userInfo!
         var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         keyboardFrame = self.convert(keyboardFrame, from: nil)
         
@@ -64,7 +64,7 @@ class AddSuggestionAlert: UIView {
     }
     
     @objc func keyboardWillHide(notification:NSNotification){
-        var userInfo = notification.userInfo!
+        let userInfo = notification.userInfo!
         var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         keyboardFrame = self.convert(keyboardFrame, from: nil)
         
@@ -91,8 +91,20 @@ class AddSuggestionAlert: UIView {
         
         self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         
+        titleField.layer.borderWidth = 1
+        if #available(iOS 13.0, *) {
+            titleField.layer.borderColor = UIColor.tertiaryLabel.cgColor
+        } else {
+            titleField.layer.borderColor = UIColor(red:0.96, green:0.96, blue:0.96, alpha:1.0).cgColor
+        }
+        titleField.layer.cornerRadius = 6
+        
         descriptionTextView.layer.borderWidth = 1
-        descriptionTextView.layer.borderColor = UIColor(red:0.96, green:0.96, blue:0.96, alpha:1.0).cgColor
+        if #available(iOS 13.0, *) {
+            descriptionTextView.layer.borderColor = UIColor.tertiaryLabel.cgColor
+        } else {
+            descriptionTextView.layer.borderColor = UIColor(red:0.96, green:0.96, blue:0.96, alpha:1.0).cgColor
+        }
         descriptionTextView.layer.cornerRadius = 6
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)

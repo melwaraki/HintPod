@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import SafariServices
+import MessageUI
 
-class SuggestionsListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, SuggCellDelegate {
+class SuggestionsListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, SuggCellDelegate, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -120,6 +122,32 @@ class SuggestionsListVC: UIViewController, UITableViewDataSource, UITableViewDel
             }
         }
 
+    }
+    
+    @IBAction func tappedHintpodBanner(_ sender: Any) {
+        let alert = UIAlertController(title: "HintPod", message: "This suggestions screen is powered by HintPod.", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Visit website", style: .default, handler: { (action) in
+            if let url = URL(string: "https://hintpod.com") {
+                let vc = SFSafariViewController(url: url)
+                self.present(vc, animated: true)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Get in touch", style: .default, handler: { (action) in
+            if MFMailComposeViewController.canSendMail() {
+                let mail = MFMailComposeViewController()
+                mail.mailComposeDelegate = self
+                mail.setToRecipients(["founders@hintpod.com"])
+                self.present(mail, animated: true)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+            alert.dismiss(animated: true)
+        }))
+        self.present(alert, animated: true)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
     
 }

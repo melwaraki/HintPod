@@ -17,7 +17,14 @@ class APIManager {
             return;
         }
         
-        Alamofire.request(Constants.baseURL + "loadSuggestions?projectId=\(projectId)").responseJSON { (response) in
+        guard let companyId: String =
+            UserDefaults.standard.string(forKey: "HPCompanyId") else {
+                error("Failed to load company id")
+                return;
+            }
+        
+        Alamofire.request(Constants.baseURL + "loadSuggestions?projectId=\(projectId)" +
+            "&companyId=\(companyId)").responseJSON { (response) in
             if (response.error != nil) {
                 // Handle error.
                 error("Failed to load suggestions")
