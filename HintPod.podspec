@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HintPod'
-  s.version          = '0.0.1'
+  s.version          = '1.0.0'
   s.summary          = 'Build a community with two lines of code.'
 
 # This description is used to generate tags and improve search results.
@@ -26,10 +26,10 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'melwaraki' => 'mirage299@gmail.com' }
   s.source           = { :git => 'https://github.com/melwaraki/HintPod.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/hintpod'
 
   s.ios.deployment_target = '9.0'
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
 
   s.source_files = 'HintPod/Classes/**/*'
   s.resources = "HintPod/Assets/*.{png,jpeg,jpg,storyboard,xib,xcassets,json}"

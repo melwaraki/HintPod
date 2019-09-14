@@ -124,7 +124,7 @@ class CommentsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
                 pSuggestion?.votes[userId] = nil
             }
             
-            let index = p.suggestions.index(where: { (item) -> Bool in
+            let index = p.suggestions.firstIndex(where: { (item) -> Bool in
                 item.id == self.suggestion.id // test if this is the item you're looking for
             })!
             
