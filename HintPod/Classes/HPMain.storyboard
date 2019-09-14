@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wV9-ra-2yw">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -129,6 +129,12 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IPp-Nd-nKv">
                                 <rect key="frame" x="150" y="252" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Suggestions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZP-s0-IKe">
+                                <rect key="frame" x="84.5" y="249" width="151.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Di-08-F0v">
                                 <rect key="frame" x="0.0" y="479" width="320" height="45"/>
                                 <subviews>
@@ -150,10 +156,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="jZP-s0-IKe" firstAttribute="centerX" secondItem="t41-b4-Ehe" secondAttribute="centerX" id="NzI-fX-pFf"/>
                             <constraint firstItem="18L-Gy-J9T" firstAttribute="trailing" secondItem="DPf-S2-8Z3" secondAttribute="trailing" id="YYL-dw-FX4"/>
                             <constraint firstItem="8Di-08-F0v" firstAttribute="bottom" secondItem="DPf-S2-8Z3" secondAttribute="bottom" id="cg2-SS-Jjn"/>
                             <constraint firstItem="IPp-Nd-nKv" firstAttribute="centerX" secondItem="t41-b4-Ehe" secondAttribute="centerX" id="dwP-If-yZg"/>
                             <constraint firstItem="18L-Gy-J9T" firstAttribute="leading" secondItem="DPf-S2-8Z3" secondAttribute="leading" id="jO6-9z-Kff"/>
+                            <constraint firstItem="jZP-s0-IKe" firstAttribute="centerY" secondItem="t41-b4-Ehe" secondAttribute="centerY" id="jrw-2d-wlr"/>
                             <constraint firstItem="8Di-08-F0v" firstAttribute="trailing" secondItem="DPf-S2-8Z3" secondAttribute="trailing" id="mtv-cF-mNq"/>
                             <constraint firstItem="IPp-Nd-nKv" firstAttribute="centerY" secondItem="t41-b4-Ehe" secondAttribute="centerY" id="r6e-Nb-WFX"/>
                             <constraint firstItem="8Di-08-F0v" firstAttribute="top" secondItem="18L-Gy-J9T" secondAttribute="bottom" id="riu-fP-B9z"/>
@@ -176,6 +184,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="loadingIndicator" destination="IPp-Nd-nKv" id="7gS-Lz-6DX"/>
+                        <outlet property="noSuggestionsLabel" destination="jZP-s0-IKe" id="zjq-oz-iUe"/>
                         <outlet property="tableView" destination="18L-Gy-J9T" id="dtO-ZB-W4D"/>
                     </connections>
                 </viewController>

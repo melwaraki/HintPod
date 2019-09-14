@@ -13,6 +13,7 @@ class SuggestionsListVC: UIViewController, UITableViewDataSource, UITableViewDel
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var noSuggestionsLabel: UILabel!
     
     var suggestionAlert: AddSuggestionAlert?
     
@@ -33,9 +34,10 @@ class SuggestionsListVC: UIViewController, UITableViewDataSource, UITableViewDel
     
     func loadSuggestions() {
         APIManager.loadSuggestions(success: { (suggestions) in
-            self.suggestions = suggestions.sorted{($0.voteCount > $1.voteCount)}
+//            self.suggestions = suggestions.sorted{($0.voteCount > $1.voteCount)}
             self.tableView.reloadData()
             self.loadingIndicator.stopAnimating()
+            self.noSuggestionsLabel.isHidden = self.suggestions.count != 0
         }) { (error) in
             print(error)
             self.loadingIndicator.stopAnimating()
