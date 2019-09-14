@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func tappedPresent(_ sender: Any) {
-        HintPod.present(with: nil)
+        HintPod.present(title: "App Feedback")
     }
 
 }

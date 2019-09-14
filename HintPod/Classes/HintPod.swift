@@ -4,14 +4,14 @@ public class HintPod {
     public init() {
     }
     
-    public static func present(with title: String?) {
+    public static func present(title: String?) {
         let bundle = Bundle(identifier: "org.cocoapods.HintPod")
         let sb = UIStoryboard(name: "HPMain", bundle: bundle!)
         let vc: UIViewController = sb.instantiateInitialViewController()!
         
-//        if let title = title {
-//            vc.children.first?.title = title
-//        }
+        if let title = title {
+            vc.children.first?.title = title
+        }
         
         UIApplication.topViewController()?.present(vc, animated: true)
     }
