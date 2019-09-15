@@ -87,12 +87,12 @@ class APIManager {
     
     static func loadComments(suggestionId: String, success: @escaping ([Comment]) -> (), error: @escaping (String) -> ()) {
         
-        guard let userId: String = UserDefaults.standard.string(forKey: "HPUserId") else {
-            error("Failed to load user id")
-            return;
-        }
+//        guard let userId: String = UserDefaults.standard.string(forKey: "HPUserId") else {
+//            error("Failed to load user id")
+//            return;
+//        }
         
-        Alamofire.request(Constants.baseURL + "loadComments?suggestionId=\(suggestionId)&userId=\(userId)").responseJSON { (response) in
+        Alamofire.request(Constants.baseURL + "loadComments?suggestionId=\(suggestionId)").responseJSON { (response) in
             if (response.error != nil) {
                 // Handle error.
                 error("Failed to load comments")
