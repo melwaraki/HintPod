@@ -27,19 +27,14 @@ class AddSuggestionAlert: UIView {
         
         if title == "" || description == "" {return}
         
-        if let suggestionsVC = UIApplication.shared.keyWindow?.rootViewController?.presentedViewController?.children.first as? SuggestionsListVC {
-            
-            suggestionsVC.loadingIndicator.startAnimating()
-            
-            APIManager.addSuggestion(title: title, content: description, success: {
-                suggestionsVC.loadSuggestions()
-            }) { (error) in
-                suggestionsVC.loadingIndicator.stopAnimating()
-                print(error)
-            }
-            
-        }
+        HintPod.suggestionsListVC?.loadingIndicator.startAnimating()
         
+        APIManager.addSuggestion(title: title, content: description, success: {
+            HintPod.suggestionsListVC?.loadSuggestions()
+        }) { (error) in
+            HintPod.suggestionsListVC?.loadingIndicator.stopAnimating()
+            print(error)
+        }
         
     }
     

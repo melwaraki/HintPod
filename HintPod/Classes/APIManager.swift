@@ -66,11 +66,7 @@ class APIManager {
         
         var parameters = "addSuggestion?title=\(title)&content=\(content)&userId=\(userId)&projectId=\(projectId)"
         
-        print(parameters)
-        
         parameters = parameters.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        
-        print(parameters)
         
         Alamofire.request(Constants.baseURL + parameters).response { (response) in
             if (response.error != nil) {
@@ -189,11 +185,8 @@ class APIManager {
             parameters = "verifyUser?uniqueId=\(id)&name=\(name!)&projectId=\(projectId)"
         }
         
-        print(parameters)
         parameters = parameters.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        print(parameters)
         parameters = parameters.replacingOccurrences(of: " ", with: "+")
-        print(parameters)
         
         Alamofire.request(Constants.baseURL + parameters).responseString(completionHandler: { (response) in
             if (response.error != nil) {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wV9-ra-2yw">
-    <device id="retina4_0" orientation="portrait" appearance="dark"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wV9-ra-2yw">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,25 +13,25 @@
             <objects>
                 <viewController storyboardIdentifier="SuggestionsListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1cU-Lr-V7T" customClass="SuggestionsListVC" customModule="HintPod" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t41-b4-Ehe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="18L-Gy-J9T">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="479"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="644"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SuggestionsListCell" rowHeight="154" id="YTa-uw-f0s" customClass="SuggestionsListCell" customModule="HintPod" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="154"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="154"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YTa-uw-f0s" id="S4r-7H-24I">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="154"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="154"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isN-KQ-NEX">
-                                                    <rect key="frame" x="15" y="11" width="290" height="132"/>
+                                                    <rect key="frame" x="15" y="11" width="345" height="132"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Watch app " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8P-1O-2g6">
-                                                            <rect key="frame" x="62" y="12" width="212" height="21"/>
+                                                            <rect key="frame" x="62" y="12" width="267" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="qTA-N6-4mw"/>
                                                             </constraints>
@@ -40,7 +40,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I think you should make an Apple Watch app so i can keep track of my exercises from my watch." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CW-MS-kMU">
-                                                            <rect key="frame" x="62" y="49" width="212" height="38.5"/>
+                                                            <rect key="frame" x="62" y="49" width="267" height="38.333333333333343"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -74,7 +74,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkJ-pC-TxZ">
-                                                            <rect key="frame" x="62" y="99.5" width="212" height="18"/>
+                                                            <rect key="frame" x="62" y="99.333333333333329" width="267" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -127,38 +127,38 @@
                                 </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IPp-Nd-nKv">
-                                <rect key="frame" x="150" y="252" width="20" height="20"/>
+                                <rect key="frame" x="177.66666666666666" y="352" width="20" height="20"/>
                             </activityIndicatorView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Suggestions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZP-s0-IKe">
-                                <rect key="frame" x="84.5" y="249" width="151.5" height="26.5"/>
+                                <rect key="frame" x="111.66666666666667" y="348.66666666666669" width="151.66666666666663" height="26.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Di-08-F0v">
-                                <rect key="frame" x="0.0" y="479" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="644" width="375" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7C-rB-HPI">
-                                        <rect key="frame" x="90.5" y="7.5" width="139" height="30"/>
+                                        <rect key="frame" x="118" y="10" width="139" height="30"/>
                                         <state key="normal" title="Powered by HintPod"/>
                                         <connections>
                                             <action selector="tappedHintpodBanner:" destination="1cU-Lr-V7T" eventType="touchUpInside" id="vu3-LY-jKS"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="I9j-xI-Fm1"/>
+                                    <constraint firstAttribute="height" constant="80" id="I9j-xI-Fm1"/>
                                     <constraint firstItem="e7C-rB-HPI" firstAttribute="centerX" secondItem="8Di-08-F0v" secondAttribute="centerX" id="JwQ-nN-MgF"/>
-                                    <constraint firstItem="e7C-rB-HPI" firstAttribute="centerY" secondItem="8Di-08-F0v" secondAttribute="centerY" id="L4u-wV-BOs"/>
+                                    <constraint firstItem="e7C-rB-HPI" firstAttribute="centerY" secondItem="8Di-08-F0v" secondAttribute="centerY" constant="-15" id="L4u-wV-BOs"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="8Di-08-F0v" secondAttribute="bottom" id="DSW-Jo-2Hw"/>
                             <constraint firstItem="jZP-s0-IKe" firstAttribute="centerX" secondItem="t41-b4-Ehe" secondAttribute="centerX" id="NzI-fX-pFf"/>
                             <constraint firstItem="18L-Gy-J9T" firstAttribute="trailing" secondItem="DPf-S2-8Z3" secondAttribute="trailing" id="YYL-dw-FX4"/>
-                            <constraint firstItem="8Di-08-F0v" firstAttribute="bottom" secondItem="DPf-S2-8Z3" secondAttribute="bottom" id="cg2-SS-Jjn"/>
                             <constraint firstItem="IPp-Nd-nKv" firstAttribute="centerX" secondItem="t41-b4-Ehe" secondAttribute="centerX" id="dwP-If-yZg"/>
                             <constraint firstItem="18L-Gy-J9T" firstAttribute="leading" secondItem="DPf-S2-8Z3" secondAttribute="leading" id="jO6-9z-Kff"/>
                             <constraint firstItem="jZP-s0-IKe" firstAttribute="centerY" secondItem="t41-b4-Ehe" secondAttribute="centerY" id="jrw-2d-wlr"/>
@@ -197,22 +197,22 @@
             <objects>
                 <viewController id="mp3-mo-kc0" customClass="CommentsListVC" customModule="HintPod" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v72-yp-CJt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="477"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7a3-bP-rwd">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="477"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="672"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SuggestionsListCell" rowHeight="192" id="Prg-10-fv1" customClass="SuggestionsListCell" customModule="HintPod" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="192"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="192"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Prg-10-fv1" id="JgL-SE-HqH">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="192"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="192"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Watch app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdm-Im-YeX">
-                                                    <rect key="frame" x="66" y="21" width="239" height="21"/>
+                                                    <rect key="frame" x="66" y="21" width="294" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="K5U-Pb-za1"/>
                                                     </constraints>
@@ -221,19 +221,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I think you should make an Apple Watch app so i can keep track of my exercises from my watch." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51O-Hy-1wM">
-                                                    <rect key="frame" x="66" y="54" width="238" height="76.5"/>
+                                                    <rect key="frame" x="66" y="54" width="293" height="57.333333333333343"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV0-wZ-2d4">
-                                                    <rect key="frame" x="66" y="142.5" width="56" height="18"/>
+                                                    <rect key="frame" x="66" y="123.33333333333331" width="56" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZ5-Mh-CtW" customClass="UpvoteBtn" customModule="HintPod" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="20.5" width="30" height="30"/>
+                                                    <rect key="frame" x="16" y="20.666666666666671" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="gZ5-Mh-CtW" secondAttribute="height" multiplier="1:1" id="WX2-fY-T5b"/>
                                                         <constraint firstAttribute="width" constant="30" id="yEG-Uc-BFT"/>
@@ -246,7 +246,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWH-QR-1NV" customClass="DownvoteBtn" customModule="HintPod" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="58.5" width="30" height="30"/>
+                                                    <rect key="frame" x="16" y="58.666666666666657" width="30" height="30"/>
                                                     <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <state key="normal" image="arrow-down-u.png"/>
                                                     <state key="selected" image="arrow-down-s.png"/>
@@ -283,20 +283,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentsListCell" rowHeight="85" id="RAa-71-W09" customClass="CommentCell" customModule="HintPod" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="220" width="320" height="85"/>
+                                        <rect key="frame" x="0.0" y="220" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RAa-71-W09" id="LuP-cU-d9J">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I really like that!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3d-4R-pPr">
-                                                    <rect key="frame" x="19" y="45" width="286" height="29"/>
+                                                    <rect key="frame" x="19" y="45" width="341" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ai0-27-1aO">
-                                                    <rect key="frame" x="19" y="12" width="285" height="21"/>
+                                                    <rect key="frame" x="19" y="12" width="340" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="oYY-6j-31a"/>
                                                     </constraints>
@@ -368,7 +368,7 @@
                 <navigationController storyboardIdentifier="SuggestionsNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wV9-ra-2yw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="dHS-ah-Lkt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </navigationBar>
