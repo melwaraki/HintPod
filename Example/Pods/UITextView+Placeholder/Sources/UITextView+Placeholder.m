@@ -85,6 +85,7 @@
              @"text",
              @"textAlignment",
              @"textContainerInset",
+             @"textContainer.lineFragmentPadding",
              @"textContainer.exclusionPaths"];
 }
 
@@ -103,6 +104,7 @@
         textView.backgroundColor = [UIColor clearColor];
         textView.textColor = [self.class defaultPlaceholderColor];
         textView.userInteractionEnabled = NO;
+        textView.isAccessibilityElement = NO;
         objc_setAssociatedObject(self, @selector(placeholderTextView), textView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
         self.needsUpdateFont = YES;
@@ -182,8 +184,10 @@
 - (void)updatePlaceholderTextView {
     if (self.text.length) {
         [self.placeholderTextView removeFromSuperview];
+        self.accessibilityValue = self.text;
     } else {
         [self insertSubview:self.placeholderTextView atIndex:0];
+        self.accessibilityValue = self.placeholder;
     }
 
     if (self.needsUpdateFont) {
@@ -195,6 +199,7 @@
     }
     self.placeholderTextView.textContainer.exclusionPaths = self.textContainer.exclusionPaths;
     self.placeholderTextView.textContainerInset = self.textContainerInset;
+    self.placeholderTextView.textContainer.lineFragmentPadding = self.textContainer.lineFragmentPadding;
     self.placeholderTextView.frame = self.bounds;
 }
 

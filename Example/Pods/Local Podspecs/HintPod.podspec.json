@@ -28,11 +28,8 @@
     ]
   },
   "dependencies": {
-    "Alamofire": [
-      "~> 5.1.0"
-    ],
     "UITextView+Placeholder": [
-
+      "~> 1.4.0"
     ]
   },
   "swift_version": "5.0"
