@@ -146,7 +146,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="I9j-xI-Fm1"/>
                                     <constraint firstItem="e7C-rB-HPI" firstAttribute="centerX" secondItem="8Di-08-F0v" secondAttribute="centerX" id="JwQ-nN-MgF"/>
@@ -154,7 +154,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DPf-S2-8Z3" firstAttribute="bottom" secondItem="8Di-08-F0v" secondAttribute="bottom" id="DSW-Jo-2Hw"/>
                             <constraint firstItem="jZP-s0-IKe" firstAttribute="centerX" secondItem="t41-b4-Ehe" secondAttribute="centerX" id="NzI-fX-pFf"/>

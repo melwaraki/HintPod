@@ -1,6 +1,6 @@
 {
   "name": "HintPod",
-  "version": "0.0.1",
+  "version": "1.0.5",
   "summary": "Build a community with two lines of code.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/melwaraki/HintPod",
@@ -13,12 +13,13 @@
   },
   "source": {
     "git": "https://github.com/melwaraki/HintPod.git",
-    "tag": "0.0.1"
+    "tag": "1.0.5"
   },
+  "social_media_url": "https://twitter.com/hintpod",
   "platforms": {
-    "ios": "9.0"
+    "ios": "10.0"
   },
-  "swift_versions": "4.2",
+  "swift_versions": "5.0",
   "source_files": "HintPod/Classes/**/*",
   "resources": "HintPod/Assets/*.{png,jpeg,jpg,storyboard,xib,xcassets,json}",
   "resource_bundles": {
@@ -28,11 +29,11 @@
   },
   "dependencies": {
     "Alamofire": [
-
+      "~> 5.1.0"
     ],
     "UITextView+Placeholder": [
 
     ]
   },
-  "swift_version": "4.2"
+  "swift_version": "5.0"
 }
