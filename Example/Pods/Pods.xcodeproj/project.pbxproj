@@ -676,6 +676,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = E62AA541B59836DAC07D635D4620C63A /* Products */;
@@ -891,7 +892,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/HintPod/HintPod-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/HintPod/HintPod-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/HintPod/HintPod.modulemap";
 				PRODUCT_MODULE_NAME = HintPod;
@@ -1273,7 +1274,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/HintPod/HintPod-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/HintPod/HintPod-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/HintPod/HintPod.modulemap";
 				PRODUCT_MODULE_NAME = HintPod;

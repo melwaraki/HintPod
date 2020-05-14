@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wV9-ra-2yw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wV9-ra-2yw">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="18L-Gy-J9T">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="644"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="640"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SuggestionsListCell" rowHeight="154" id="YTa-uw-f0s" customClass="SuggestionsListCell" customModule="HintPod" customModuleProvider="target">
@@ -136,7 +136,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Di-08-F0v">
-                                <rect key="frame" x="0.0" y="644" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="640" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7C-rB-HPI">
                                         <rect key="frame" x="118" y="10" width="139" height="30"/>
@@ -148,15 +148,15 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="I9j-xI-Fm1"/>
+                                    <constraint firstAttribute="height" constant="50" id="I9j-xI-Fm1"/>
                                     <constraint firstItem="e7C-rB-HPI" firstAttribute="centerX" secondItem="8Di-08-F0v" secondAttribute="centerX" id="JwQ-nN-MgF"/>
-                                    <constraint firstItem="e7C-rB-HPI" firstAttribute="centerY" secondItem="8Di-08-F0v" secondAttribute="centerY" constant="-15" id="L4u-wV-BOs"/>
+                                    <constraint firstItem="e7C-rB-HPI" firstAttribute="centerY" secondItem="8Di-08-F0v" secondAttribute="centerY" id="L4u-wV-BOs"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="8Di-08-F0v" secondAttribute="bottom" id="DSW-Jo-2Hw"/>
+                            <constraint firstItem="DPf-S2-8Z3" firstAttribute="bottom" secondItem="8Di-08-F0v" secondAttribute="bottom" id="DSW-Jo-2Hw"/>
                             <constraint firstItem="jZP-s0-IKe" firstAttribute="centerX" secondItem="t41-b4-Ehe" secondAttribute="centerX" id="NzI-fX-pFf"/>
                             <constraint firstItem="18L-Gy-J9T" firstAttribute="trailing" secondItem="DPf-S2-8Z3" secondAttribute="trailing" id="YYL-dw-FX4"/>
                             <constraint firstItem="IPp-Nd-nKv" firstAttribute="centerX" secondItem="t41-b4-Ehe" secondAttribute="centerX" id="dwP-If-yZg"/>
@@ -382,13 +382,13 @@
             <point key="canvasLocation" x="101.59999999999999" y="58.920539730134934"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="TUv-sM-ssX"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow-down-s.png" width="104" height="104"/>
         <image name="arrow-down-u.png" width="96" height="96"/>
         <image name="arrow-up-s.png" width="104" height="104"/>
         <image name="arrow-up-u.png" width="96" height="96"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="TUv-sM-ssX"/>
-    </inferredMetricsTieBreakers>
 </document>
