@@ -7,12 +7,12 @@
 
 import Foundation
 
-class Comment {
+class Comment: Codable {
     
     var id: String!
-    var content: String!
-    var uid: String!
-    var name: String!
+    var content: String?
+    var uid: String?
+    var name: String?
     
     init(json: AnyObject) {
         

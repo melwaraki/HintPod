@@ -34,13 +34,18 @@ class SuggestionsListVC: UIViewController, UITableViewDataSource, UITableViewDel
     
     func loadSuggestions() {
         APIManager.loadSuggestions(success: { (suggestions) in
-            self.suggestions = suggestions.sorted{($0.voteCount > $1.voteCount)}
-            self.tableView.reloadData()
-            self.loadingIndicator.stopAnimating()
-            self.noSuggestionsLabel.isHidden = suggestions.count != 0
+            self.suggestions = suggestions.sorted{($0.voteCount ?? 0 > $1.voteCount ?? 0)}
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.loadingIndicator.stopAnimating()
+                self.noSuggestionsLabel.isHidden = suggestions.count != 0
+            }
         }) { (error) in
             print(error)
-            self.loadingIndicator.stopAnimating()
+            DispatchQueue.main.async {
+                self.loadingIndicator.stopAnimating()
+            }
         }
     }
     

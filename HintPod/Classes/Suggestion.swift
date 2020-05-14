@@ -7,13 +7,13 @@
 
 import Foundation
 
-class Suggestion {
+class Suggestion: Codable {
     
     var id: String!
-    var title: String!
-    var content: String!
-    var status: String!
-    var voteCount: Int!
+    var title: String?
+    var content: String?
+    var status: String?
+    var voteCount: Int?
     var votes: Dictionary<String, Bool> = [:]
     
     init(json: AnyObject) {

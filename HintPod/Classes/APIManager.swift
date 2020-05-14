@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Alamofire
 
 class APIManager {
     
@@ -17,40 +16,24 @@ class APIManager {
             return;
         }
         
-        guard let companyId: String =
-            UserDefaults.standard.string(forKey: "HPCompanyId") else {
+        guard let companyId: String = UserDefaults.standard.string(forKey: "HPCompanyId") else {
                 error("Failed to load company id")
                 return;
-            }
-        
-        Alamofire.request(Constants.baseURL + "loadSuggestions?projectId=\(projectId)" +
-            "&companyId=\(companyId)").responseJSON { (response) in
-            if (response.error != nil) {
-                // Handle error.
-                error("Failed to load suggestions")
-
-            } else {
-                // Success...
-                if let json = response.result.value {
-                    var array:Array<AnyObject>!
-
-                    array = json as? Array<AnyObject>
-                    
-                    var suggestions = [Suggestion]()
-                    
-                    for a in array {
-                        let suggestion = Suggestion(json: a)
-                        suggestions.append(suggestion)
-                    }
-
-                    success(suggestions)
-
-                } else {
-                    error("No date types found!")
-                }
-
-            }
         }
+        
+        let url = URL(string: Constants.baseURL + "loadSuggestions?projectId=\(projectId)" +
+        "&companyId=\(companyId)")!
+        URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, errorMessage: Error?) in
+            
+             guard let data = data, errorMessage == nil else {
+                error("Failed to load suggestions")
+                 return
+             }
+            
+            let suggestions = try! JSONDecoder().decode([Suggestion].self, from: data)
+            success(suggestions)
+            
+        }.resume()
     }
     
     static func addSuggestion(title: String, content: String, success: @escaping () -> (), error: @escaping (String) -> ()) {
@@ -68,53 +51,33 @@ class APIManager {
         
         parameters = parameters.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
-        Alamofire.request(Constants.baseURL + parameters).response { (response) in
-            if (response.error != nil) {
-                // Handle error.
-                error("Failed to add suggestion, \(response.error!.localizedDescription)")
-                
-            } else {
-                // Success...
-                success()
-                
-            }
-        }
+        let url = URL(string: Constants.baseURL + parameters)!
+        URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, errorMessage: Error?) in
+            
+             guard errorMessage == nil else {
+                 // Handle Empty Data
+                error("Failed to add suggestion, \(errorMessage?.localizedDescription ?? "unkown error")")
+                 return
+             }
+            success()
+            
+        }.resume()
     }
     
     static func loadComments(suggestionId: String, success: @escaping ([Comment]) -> (), error: @escaping (String) -> ()) {
         
-//        guard let userId: String = UserDefaults.standard.string(forKey: "HPUserId") else {
-//            error("Failed to load user id")
-//            return;
-//        }
-        
-        Alamofire.request(Constants.baseURL + "loadComments?suggestionId=\(suggestionId)").responseJSON { (response) in
-            if (response.error != nil) {
-                // Handle error.
-                error("Failed to load comments")
-                
-            } else {
-                // Success...
-                if let json = response.result.value {
-                    var array:Array<AnyObject>!
-                    
-                    array = json as? Array<AnyObject>
-                    
-                    var comments = [Comment]()
-                    
-                    for a in array {
-                        let comment = Comment(json: a)
-                        comments.append(comment)
-                    }
-                    
-                    success(comments)
-                    
-                } else {
-                    error("No date types found!")
-                }
-                
-            }
-        }
+        let url = URL(string: Constants.baseURL + "loadComments?suggestionId=\(suggestionId)")!
+        URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, errorMessage: Error?) in
+            
+             guard let data = data, errorMessage == nil else {
+                error("Failed to load suggestions")
+                 return
+             }
+            
+            let comments = try! JSONDecoder().decode([Comment].self, from: data)
+            success(comments)
+            
+        }.resume()
     }
     
     static func addComment(suggestionId: String, comment: String, success: @escaping () -> (), error: @escaping (String) -> ()) {
@@ -127,17 +90,17 @@ class APIManager {
         var parameters = "addComment?userId=\(userId)&content=\(comment)&suggestionId=\(suggestionId)"
         parameters = parameters.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
-        Alamofire.request(Constants.baseURL + parameters).response { (response) in
-            if (response.error != nil) {
-                // Handle error.
-                error("Failed to add comment, \(response.error!.localizedDescription)")
-                
-            } else {
-                // Success...
-                success()
-                
-            }
-        }
+        let url = URL(string: Constants.baseURL + parameters)!
+        URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, errorMessage: Error?) in
+            
+             guard errorMessage == nil else {
+                 // Handle Empty Data
+                error("Failed to add comment, \(errorMessage?.localizedDescription ?? "unkown error")")
+                 return
+             }
+            success()
+            
+        }.resume()
     }
     
     static func vote(suggestionId: String, upvote: Bool, voting: Bool, success: @escaping () -> (), error: @escaping (String) -> ()) {
@@ -157,17 +120,17 @@ class APIManager {
         
         parameters = parameters.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
-        Alamofire.request(Constants.baseURL + parameters).response(completionHandler: { (response) in
-            if (response.error != nil) {
-                // Handle error.
-                error(("Failed to vote on suggestion, \(response.error!.localizedDescription)"))
-                
-            } else {
-                // Success...
-                success()
-                
-            }
-        })
+        let url = URL(string: Constants.baseURL + parameters)!
+        URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, errorMessage: Error?) in
+            
+             guard errorMessage == nil else {
+                 // Handle Empty Data
+                error("Failed to vote on suggestion, \(errorMessage?.localizedDescription ?? "unkown error")")
+                 return
+             }
+            success()
+            
+        }.resume()
         
     }
     
@@ -188,17 +151,19 @@ class APIManager {
         parameters = parameters.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         parameters = parameters.replacingOccurrences(of: " ", with: "+")
         
-        Alamofire.request(Constants.baseURL + parameters).responseString(completionHandler: { (response) in
-            if (response.error != nil) {
-                // Handle error.
-                error(("Failed to verify user, \(response.error!.localizedDescription)"))
-                
-            } else {
-                // Success...
-                success(response.result.value!)
-                
-            }
-        })
+        let url = URL(string: Constants.baseURL + parameters)!
+        URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, errorMessage: Error?) in
+            
+             guard let data = data, errorMessage == nil else {
+                 // Handle Empty Data
+                error("Failed to verify user, \(errorMessage?.localizedDescription ?? "unkown error")")
+                 return
+             }
+            
+            let responseString = String(data: data, encoding: String.Encoding.utf8)
+            success(responseString!)
+            
+        }.resume()
     }
     
 }
