@@ -13,6 +13,7 @@ class CommentsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var suggestion: Suggestion!
     var comments: [Comment] = []
+    var loadedComments: Bool = false
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,9 +31,11 @@ class CommentsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func loadComments() {
         APIManager.loadComments(suggestionId: suggestion.id, success: { (comments) in
-            self.comments = comments
-            self.tableView.reloadData()
-            
+            DispatchQueue.main.async {
+                self.loadedComments = true
+                self.comments = comments
+                self.tableView.reloadData()
+            }
         }) { (error) in
             print(error)
         }
@@ -74,7 +77,15 @@ class CommentsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         if section == 0 {
             return nil
         } else {
-            return comments.count == 0 ? "No comments yet" : "Comments"
+            if !loadedComments {
+                return "Loading comments..."
+            } else if comments.count == 0 {
+                return "No comments yet"
+            } else if comments.count == 1 {
+                return "1 comment"
+            } else {
+                return "\(comments.count) comments"
+            }
         }
     }
     
@@ -88,8 +99,10 @@ class CommentsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func loadNewComment() {
         APIManager.loadComments(suggestionId: self.suggestion.id, success: { (comments) in
-            self.comments = comments
-            self.tableView.reloadSections([1], with: .automatic)
+            DispatchQueue.main.async {
+                self.comments = comments
+                self.tableView.reloadSections([1], with: .automatic)
+            }
         }, error: { (error) in
             print(error)
         })

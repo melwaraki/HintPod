@@ -16,6 +16,11 @@ class Suggestion: Codable {
     var voteCount: Int?
     var votes: Dictionary<String, Bool> = [:]
     
+    enum CodingKeys: String, CodingKey {
+        case id = "key"
+        case title, content, status, voteCount, votes
+    }
+    
     init(json: AnyObject) {
         
         var dict:Dictionary<String, AnyObject>!

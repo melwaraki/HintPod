@@ -14,6 +14,11 @@ class Comment: Codable {
     var uid: String?
     var name: String?
     
+    enum CodingKeys: String, CodingKey {
+        case id = "key"
+        case content, uid, name
+    }
+    
     init(json: AnyObject) {
         
         var dict:Dictionary<String, AnyObject>!
